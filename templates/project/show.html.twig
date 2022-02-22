@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() ~ ' - '~  project.name}} {% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('project') }}
+{% endblock %}
+
+{% block javascripts %}
+ {{ parent() }} 
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+
+{% block body %}
+
+    <h1 class="my-project" data-project-id="{{ project.id }}">{{ project.name }}</h1>
+
+    <p>{{ project.description }}</p>
+{% endblock %}

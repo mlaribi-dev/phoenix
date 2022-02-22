@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="{{path('app_homepage')}}"><img src="/images/logo.png" width="100"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  {% if is_granted('IS_AUTHENTICATED_REMEMBERED')%}
+                    <a class="nav-link" href="{{path('app_logout')}}">Déconnexion</a>
+                  {% else %}
+                    <a class="nav-link" href="{{path('app_login')}}">  <i class="fa-solid fa-user"></i>Connexion</a>
+                  {% endif %}
+                  {% if is_granted('ROLE_ADMIN')%}
+                  <li>
+                    <a class="nav-link" href="{{path('app_new_project')}}">Créer un projet</a>
+                  </li>
+                  {% endif %}
+                </li>
+              </ul>
+            </div>
+          </div>
+      </nav>
+        {% block body %}
+                
+        {% endblock %}
+    </body>
+</html>
