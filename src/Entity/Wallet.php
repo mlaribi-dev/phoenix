@@ -18,11 +18,13 @@ class Wallet
     #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $manager;
+
 
     #[ORM\OneToMany(mappedBy: 'wallet', targetEntity: Project::class)]
     private $projects;
+
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'wallets')]
+    private $manager;
 
     public function __construct()
     {
@@ -47,17 +49,7 @@ class Wallet
         return $this;
     }
 
-    public function getManager(): ?string
-    {
-        return $this->manager;
-    }
 
-    public function setManager(string $manager): self
-    {
-        $this->manager = $manager;
-
-        return $this;
-    }
 
     /**
      * @return Collection<int, Project>
@@ -85,6 +77,18 @@ class Wallet
                 $project->setWallet(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getManager(): ?User
+    {
+        return $this->manager;
+    }
+
+    public function setManager(?User $manager): self
+    {
+        $this->manager = $manager;
 
         return $this;
     }

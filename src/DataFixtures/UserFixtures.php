@@ -27,7 +27,7 @@ class UserFixtures extends Fixture
             $user->setPassword($this->hasher->hashPassword($user,'test'));
             $user->setFirstName('firstname'.$i);
             $user->setLastName('lastname',$i);
-
+            $this->addReference('user_'.$i,$user);
             $manager->persist($user);
         }
 

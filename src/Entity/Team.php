@@ -18,19 +18,26 @@ class Team
     #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $manager;
+ 
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\OneToMany(mappedBy: 'team', targetEntity: User::class)]
     private $members;
 
-    #[ORM\OneToMany(mappedBy: 'projectTeam', targetEntity: Project::class)]
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'teams')]
+    private $manager;
+
+    #[ORM\OneToMany(mappedBy: 'clientTeam', targetEntity: Project::class)]
     private $projects;
+
+    #[ORM\OneToMany(mappedBy: 'productionTeam', targetEntity: Project::class)]
+    private $productionProjects;
 
 
     public function __construct()
     {
         $this->projects = new ArrayCollection();
+        $this->members = new ArrayCollection();
+        $this->productionProjects = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -50,26 +57,49 @@ class Team
         return $this;
     }
 
-    public function getManager(): ?string
-    {
-        return $this->manager;
-    }
+ 
 
-    public function setManager(string $manager): self
-    {
-        $this->manager = $manager;
 
-        return $this;
-    }
-
-    public function getMembers(): ?string
+    /**
+     * @return Collection<int, User>
+     */
+    public function getMembers(): Collection
     {
         return $this->members;
     }
 
-    public function setMembers(string $members): self
+    public function addMember(User $member): self
     {
-        $this->members = $members;
+        if (!$this->members->contains($member)) {
+            $this->members[] = $member;
+            $member->setTeam($this);
+        }
+
+        return $this;
+    }
+
+
+
+    public function removeMember(User $member): self
+    {
+        if ($this->members->removeElement($member)) {
+            // set the owning side to null (unless already changed)
+            if ($member->getTeam() === $this) {
+                $member->setTeam(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getManager(): ?User
+    {
+        return $this->manager;
+    }
+
+    public function setManager(?User $manager): self
+    {
+        $this->manager = $manager;
 
         return $this;
     }
@@ -86,7 +116,7 @@ class Team
     {
         if (!$this->projects->contains($project)) {
             $this->projects[] = $project;
-            $project->setProjectTeam($this);
+            $project->setClientTeam($this);
         }
 
         return $this;
@@ -96,8 +126,38 @@ class Team
     {
         if ($this->projects->removeElement($project)) {
             // set the owning side to null (unless already changed)
-            if ($project->getProjectTeam() === $this) {
-                $project->setProjectTeam(null);
+            if ($project->getClientTeam() === $this) {
+                $project->setClientTeam(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Project>
+     */
+    public function getProductionProjects(): Collection
+    {
+        return $this->productionProjects;
+    }
+
+    public function addProductionProject(Project $productionProject): self
+    {
+        if (!$this->productionProjects->contains($productionProject)) {
+            $this->productionProjects[] = $productionProject;
+            $productionProject->setProductionTeam($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProductionProject(Project $productionProject): self
+    {
+        if ($this->productionProjects->removeElement($productionProject)) {
+            // set the owning side to null (unless already changed)
+            if ($productionProject->getProductionTeam() === $this) {
+                $productionProject->setProductionTeam(null);
             }
         }
 

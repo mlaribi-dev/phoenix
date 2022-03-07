@@ -37,14 +37,6 @@ class Project
     #[ORM\ManyToOne(targetEntity: Wallet::class, inversedBy: 'projects')]
     private $wallet;
 
-    #[ORM\OneToMany(mappedBy: 'project', targetEntity: Risk::class)]
-    private $risks;
-
-    #[ORM\ManyToOne(targetEntity: Team::class, inversedBy: 'projects')]
-    private $projectTeam;
-
-    #[ORM\ManyToOne(targetEntity: Team::class, inversedBy: 'projects')]
-    private $clientTeam;
 
     #[ORM\Column(type: 'integer')]
     private $code;
@@ -55,12 +47,30 @@ class Project
     #[ORM\Column(type: 'boolean')]
     private $state;
 
+    #[ORM\OneToMany(mappedBy: 'project', targetEntity: Risk::class)]
+    private $risks;
+
+    #[ORM\OneToMany(mappedBy: 'project', targetEntity: Fact::class)]
+    private $facts;
+
+    #[ORM\ManyToOne(targetEntity: Team::class, inversedBy: 'projects')]
+    private $clientTeam;
+
+    #[ORM\ManyToOne(targetEntity: Team::class, inversedBy: 'productionProjects')]
+    private $productionTeam;
+
+    #[ORM\Column(type: 'boolean')]
+    private $archive;
+
+    
+
   
 
     public function __construct()
     {
         $this->risk = new ArrayCollection();
         $this->risks = new ArrayCollection();
+        $this->facts = new ArrayCollection();
     }
 
 
@@ -154,59 +164,7 @@ class Project
         return $this;
     }
 
-    /**
-     * @return Collection<int, Risk>
-     */
-    public function getRisks(): Collection
-    {
-        return $this->risks;
-    }
 
-    public function addRisk(Risk $risk): self
-    {
-        if (!$this->risks->contains($risk)) {
-            $this->risks[] = $risk;
-            $risk->setProject($this);
-        }
-
-        return $this;
-    }
-
-    public function removeRisk(Risk $risk): self
-    {
-        if ($this->risks->removeElement($risk)) {
-            // set the owning side to null (unless already changed)
-            if ($risk->getProject() === $this) {
-                $risk->setProject(null);
-            }
-        }
-
-        return $this;
-    }
-
-    public function getProjectTeam(): ?Team
-    {
-        return $this->projectTeam;
-    }
-
-    public function setProjectTeam(?Team $projectTeam): self
-    {
-        $this->projectTeam = $projectTeam;
-
-        return $this;
-    }
-
-    public function getClientTeam(): ?Team
-    {
-        return $this->clientTeam;
-    }
-
-    public function setClientTeam(?Team $clientTeam): self
-    {
-        $this->clientTeam = $clientTeam;
-
-        return $this;
-    }
 
     public function getCode(): ?int
     {
@@ -243,6 +201,104 @@ class Project
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Risk>
+     */
+    public function getRisks(): Collection
+    {
+        return $this->risks;
+    }
+
+    public function addRisk(Risk $risk): self
+    {
+        if (!$this->risks->contains($risk)) {
+            $this->risks[] = $risk;
+            $risk->setProject($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRisk(Risk $risk): self
+    {
+        if ($this->risks->removeElement($risk)) {
+            // set the owning side to null (unless already changed)
+            if ($risk->getProject() === $this) {
+                $risk->setProject(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Fact>
+     */
+    public function getFacts(): Collection
+    {
+        return $this->facts;
+    }
+
+    public function addFact(Fact $fact): self
+    {
+        if (!$this->facts->contains($fact)) {
+            $this->facts[] = $fact;
+            $fact->setProject($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFact(Fact $fact): self
+    {
+        if ($this->facts->removeElement($fact)) {
+            // set the owning side to null (unless already changed)
+            if ($fact->getProject() === $this) {
+                $fact->setProject(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getClientTeam(): ?Team
+    {
+        return $this->clientTeam;
+    }
+
+    public function setClientTeam(?Team $clientTeam): self
+    {
+        $this->clientTeam = $clientTeam;
+
+        return $this;
+    }
+
+    public function getProductionTeam(): ?Team
+    {
+        return $this->productionTeam;
+    }
+
+    public function setProductionTeam(?Team $productionTeam): self
+    {
+        $this->productionTeam = $productionTeam;
+
+        return $this;
+    }
+
+    public function getArchive(): ?bool
+    {
+        return $this->archive;
+    }
+
+    public function setArchive(bool $archive): self
+    {
+        $this->archive = $archive;
+
+        return $this;
+    }
+
+
 
 
 

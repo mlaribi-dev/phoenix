@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Admin!{% endblock %}
+
+{% block body %}
+    <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Intitulé</th>
+      <th scope="col">Description</th>
+      <th scope="col">Consulter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Gestion des utilisateurs</td>
+      <td>Permet de gérer les utilisateurs du site</td>
+      <td><a href="{{path('user_index')}}"><button type="button" class="btn btn-danger">Les utilisateurs</button></a></td>
+    </tr>
+    <tr>
+      <td>Gestion des équipes</td>
+      <td>Permet de gérer les équipes</td>
+      <td><a href="{{path('team_index')}}"><button type="button" class="btn btn-danger">Les équipes</button></a></td>
+    </tr>
+    <tr>
+      <td>Gestion des status</td>
+      <td>Permet de gérer les status</td>
+      <td><a href="{{path('status_index')}}"><button type="button" class="btn btn-danger">Les status</button></a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+{% endblock %}

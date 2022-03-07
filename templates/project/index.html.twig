@@ -3,32 +3,43 @@
 {% block title %}Hello !{% endblock %}
 
 {% block body %}
-<h1>Nombre de projets  : {{ projects|length}}</h1>
 
-<h2>Bonjour {{username}}</h2>
-
-<ul>
+{% if is_granted('IS_AUTHENTICATED_REMEMBERED')%}
+<h2>Bonjour {{app.user.firstName}}</h2>
 
 <div class="cards d-flex flex-wrap" >
+
 {% for project in projects %}
-
-
-<div class="cards" style="width: 18rem;" >
-  <img class="card-img-top" src="./images/phoenix.JPG" alt="Card image cap">
+<div class="card" style="width:15rem">
+  <img class="card-img-top" src="./images/logo.png" alt="Card image" >
   <div class="card-body">
     <h5 class="card-title">{{project.name}}</h5>
+     <p class="card-text">{{project.description}}</p>
     <a href="{{ path('app_show_project',{'id': project.id})}}" class="btn btn-primary">Voir projet</a>
   </div>
 </div>
 
-
-
-    
-
 {% endfor %}
+
 </div>
 
-</ul>
+{% else %}
+
+<div class="presentation">
+    <h1>Bienvenue sur Phoenix</h1>
+      <p>Ici, vous pourrez créer et gérer vos projets !</p>
+      <img src="/images/logo.png">
+    <h2>Connectez-vous !</h2>
+    <div>
+         <a class="nav-link" href="{{path('app_login')}}"><i class="fas fa-user-circle" style="font-size:45px;"></i></a>
+    </div>
+    <h3>Ou inscrivez vous dès maintenant !</h3>
+    <button class="btn btn-lg btn-success">
+        <a href="{{path('app_register')}}" style="text-decoration:none; color:white;">Inscription</a>
+    </button>
+</div>
+
+{% endif %}
 
 
 {% endblock %}

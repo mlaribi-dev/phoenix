@@ -32,6 +32,7 @@ class Risk
     private $project;
 
 
+
     public function getId(): ?int
     {
         return $this->id;
@@ -108,6 +109,7 @@ class Risk
 
         return $this;
     }
+
 
 
 }

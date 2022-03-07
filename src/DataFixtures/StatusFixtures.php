@@ -19,6 +19,7 @@ class StatusFixtures extends Fixture
             $status1->setName('Prevu');
             $status1->setSlug('UPCOMING');
             $status1->setValue(0);
+            $status1->setColor('#F63C14');
             $manager->persist($status1);
             $this->addReference('status_0',$status1);
 
@@ -26,6 +27,7 @@ class StatusFixtures extends Fixture
             $status2->setName('En cours');
             $status2->setSlug('IN PROGRESS');
             $status2->setValue(1);
+            $status2->setColor('#E5F614');
             $manager->persist($status2);
             $this->addReference('status_1',$status2);
 
@@ -33,7 +35,7 @@ class StatusFixtures extends Fixture
             $status3->setName('Terminé');
             $status3->setSlug('FINISHED');
             $status3->setValue(3);
-            
+            $status3->setColor('#12E327');
             $manager->persist($status3);
             $this->addReference('status_2',$status3);
         

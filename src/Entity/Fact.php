@@ -25,6 +25,11 @@ class Fact
     #[ORM\ManyToOne(targetEntity: Milestone::class, inversedBy: 'facts')]
     private $milestone;
 
+    #[ORM\ManyToOne(targetEntity: Project::class, inversedBy: 'facts')]
+    private $project;
+
+    
+
 
 
     public function getId(): ?int
@@ -76,6 +81,18 @@ class Fact
     public function setMilestone(?Milestone $milestone): self
     {
         $this->milestone = $milestone;
+
+        return $this;
+    }
+
+    public function getProject(): ?Project
+    {
+        return $this->project;
+    }
+
+    public function setProject(?Project $project): self
+    {
+        $this->project = $project;
 
         return $this;
     }
