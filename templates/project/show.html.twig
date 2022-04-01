@@ -13,12 +13,30 @@
 {% endblock %}
 
 {% block body %}
+<div class="container">
+    <div class="screen-left">
+        <h2 class="my-project" data-project-id="{{ project.id }}">Intitulé : </h2><p>{{ project.name }}</p>
+        <h3>Code : </h3><p>{{project.code}}</p>
+        <h3>Statut : </h3><p>{{project.status}}</p>
+        <h3>Portefeuille : </h3><p>{{project.wallet}}</p>
+        <h3>Description : </h3><p>{{project.description}}</p>
+        <h3>Crée le  : </h3><p>{{project.createdAt ? project.createdAt|date('d/m/Y') : ' '}}</p>
+        <h3>Commencé le : </h3><p>{{project.startedAt ? project.startedAt|date('d/m/Y') : ' '}}</p>
+        <h3>Terminé le : </h3><p>{{project.endedAt ? project.endedAt|date('d/m/Y') : ' '}}</p>
+    </div>
+    <div class="screen-right">
+        <h3>Equipe de production : </h3><p>{{project.productionTeam}}</p>
+        <h3>Equipe client : </h3><p>{{project.clientTeam}}</p>
+        <h3>Budget de :  </h3><p>{{project.budget.initialValue}} € </p>
+        <h3>Archivé :</h3><p>{{ project.archive ? 'Oui' : 'Non' }}</p>
 
-    <h1 class="my-project" data-project-id="{{ project.id }}">Intitulé : {{ project.name }}</h1>
-    <h3>Description : </h3> <p>{{project.description}}</p>
-    <h3>Budget de :  </h3><p>{{project.budget.initialValue}} € </p>
-    <h3>Commencé le : </h3><p>{{project.startedAt ? project.startedAt|date('d/m/Y') : ' '}}</p>
-    <h3>Terminé le : </h3><p>{{project.endedAt ? project.endedAt|date('d/m/Y') : ' '}}</p>
-    
+        <div class="d-flex flex-row">
+            <a href="{{ path('app_edit_project', {'id': project.id}) }}"><button type="button" class="btn btn-primary">Edit</button></a>
+            {{ include('project/_delete_form.html.twig') }}
+        </div>
+    </div>
+</div>
+
+
 
 {% endblock %}

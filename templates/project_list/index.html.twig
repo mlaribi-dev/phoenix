@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des projets{% endblock %}
+
+{% block body %}
+<h1 class="title"> Liste des projets<h1>
+
+<div class="cards d-flex flex-wrap" >
+
+{% for project in projects %}
+<div class="card" style="width:13rem">
+  <img class="card-img-top" src="/images/logo.png" alt="Card image" >
+  <div class="card-body">
+    <h5 class="card-title">{{project.name}}</h5>
+    <h5 class="card-text"> Description : {{project.description}}</h5> 
+    <div>
+        <h5>- Code : {{project.code}}</h5>
+        <h5>- Statut : <div style=" width : 20px; height : 20px; background : {{ project.status.color }}; display: inline-block;"></div></h5>  
+        <h5>- Equipe client : {{project.clientTeam}} </h5>
+        <h5>- Equipe de production : {{project.productionTeam}}</h5>
+        <h5>- Date de début : {{project.startedAt ? project.startedAt|date('d/m/Y') : ' '}}</h5>
+        <h5>- Date de fin : {{project.endedAt ? project.endedAt|date('d/m/Y') : ' ' }}</h5>
+    </div>
+    <a href="{{ path('app_show_project',{'id': project.id})}}" class="btn btn-primary">Voir projet</a>
+  </div>
+</div>
+
+{% endfor %}
+
+</div>
+{% endblock %}

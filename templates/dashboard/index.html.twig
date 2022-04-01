@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon tableau de bord!{% endblock %}
+
+{% block body %}
+
+<h1 style="text-align:center">Mon tableau de bord</h1>
+
+<div class="container">
+  <div class="screen-left">
+    <h1><i class="fa fa-flag"></i> Mes derniers projets</h1>
+      <div class="cards d-flex flex-wrap">
+        {% for project in projects %}
+          <div class="card" style="width:9rem">
+            <img class="card-img-top" src="./images/logo.png" alt="Card image" >
+            <div class="card-body">
+              <h5 class="card-title">{{project.name}}</h5>
+              <p class="card-text">{{project.description}}</p>
+              <a href="{{ path('app_show_project',{'id': project.id})}}" class="btn btn-primary">Voir projet</a>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+        <div>
+          <h1><i class="fa fa-exclamation-circle"></i> Projets avec risques</h1>
+            <div class="cards d-flex flex-wrap" >
+            {% for project in projectRisk %}
+            <div class="card" style="width:9rem">
+              <img class="card-img-top" src="./images/logo.png" alt="Card image" >
+              <div class="card-body">
+                <h5 class="card-title">{{project.name}}</h5>
+                <p class="card-text">{{project.description}}</p>
+                <a href="{{ path('app_show_project',{'id': project.id})}}" class="btn btn-primary">Voir projet</a>
+              </div>
+            </div>
+        {% endfor %}
+          </div>
+          <div>
+            <h1><i class="fa fa-map-marker"></i> Faits passés à confirmer</h1>
+              <div>
+                {% for fact in facts %}
+                  {% if fact.isConfirmed == 0 %}
+                    <ul class="fact-list">
+                      <h3><i class="fa fa-arrow-right"></i> {{fact.description}} - {{fact.date ? fact.date|date('Y-m-d') : '' }}</h3>
+                    </ul>
+                  {% else %}
+                      <p>Aucun fait à confimer</p>
+                  {% endif %}
+                {% endfor %}
+              </div>
+          </div>
+      </div>
+  </div>
+  
+
+  <div class="screen-right">
+    <h1><i class="fa fa-group"></i> Les derniers projets de l'équipe</h1>
+    <div class="cards d-flex flex-wrap" >
+      {% for project in projectTeam %}
+        <div class="card" style="width:9rem">
+          <img class="card-img-top" src="./images/logo.png" alt="Card image" >
+          <div class="card-body">
+            <h5 class="card-title">{{project.name}}</h5>
+            <p class="card-text">{{project.description}}</p>
+            <a href="{{ path('app_show_project',{'id': project.id})}}" class="btn btn-primary">Voir projet</a>
+          </div>
+        </div>
+        {% else %}
+        <p class="erreur">Aucun projet trouvé</p>
+      {% endfor %}
+    </div>
+    <div>
+        <h1><i class="fas fa-list"></i> Nombre de projet de par statut</h1>
+          {% for status in statuses %}
+            <h1><span style=" width : 20px; height : 20px; background : {{ status.color }}; display: inline-block;"></span> {{status.name}} : {{status.projects|length}}</h1>
+          {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

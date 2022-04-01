@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Severity{% endblock %}
+
+{% block body %}
+    <h1>Create new Severity</h1>
+
+    {{ include('severity/_form.html.twig') }}
+
+    <a href="{{ path('severity_index') }}">back to list</a>
+{% endblock %}

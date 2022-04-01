@@ -27,6 +27,9 @@ class Milestone
     #[ORM\OneToMany(mappedBy: 'milestone', targetEntity: Fact::class)]
     private $facts;
 
+    #[ORM\Column(type: 'date', nullable: true)]
+    private $date_obtain;
+
     public function __construct()
     {
         $this->facts = new ArrayCollection();
@@ -102,4 +105,18 @@ class Milestone
 
         return $this;
     }
+
+    public function getDateObtain(): ?\DateTimeInterface
+    {
+        return $this->date_obtain;
+    }
+
+    public function setDateObtain(?\DateTimeInterface $date_obtain): self
+    {
+        $this->date_obtain = $date_obtain;
+
+        return $this;
+    }
+
+
 }

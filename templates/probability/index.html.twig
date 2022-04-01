@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Probability index{% endblock %}
+
+{% block body %}
+    <h1>Probability index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Level</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for probability in probabilities %}
+            <tr>
+                <td>{{ probability.id }}</td>
+                <td>{{ probability.name }}</td>
+                <td>{{ probability.level }}</td>
+                <td>
+                    <a href="{{ path('probability_show', {'id': probability.id}) }}">show</a>
+                    <a href="{{ path('probability_edit', {'id': probability.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('probability_new') }}">Create new</a>
+{% endblock %}

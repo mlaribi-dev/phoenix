@@ -19,6 +19,8 @@ class RiskRepository extends ServiceEntityRepository
         parent::__construct($registry, Risk::class);
     }
 
+
+
     // /**
     //  * @return Risk[] Returns an array of Risk objects
     //  */

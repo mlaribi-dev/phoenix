@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Probability{% endblock %}
+
+{% block body %}
+    <h1>Probability</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ probability.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ probability.name }}</td>
+            </tr>
+            <tr>
+                <th>Level</th>
+                <td>{{ probability.level }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('probability_index') }}">back to list</a>
+
+    <a href="{{ path('probability_edit', {'id': probability.id}) }}">edit</a>
+
+    {{ include('probability/_delete_form.html.twig') }}
+{% endblock %}

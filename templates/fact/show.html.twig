@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fact{% endblock %}
+
+{% block body %}
+    <h1>Fact</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ fact.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ fact.name }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ fact.date ? fact.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ fact.description }}</td>
+            </tr>
+            <tr>
+                <th>Is_confirmed</th>
+                <td>{{ fact.isConfirmed ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('fact_index') }}">back to list</a>
+
+    <a href="{{ path('fact_edit', {'id': fact.id}) }}">edit</a>
+
+    {{ include('fact/_delete_form.html.twig') }}
+{% endblock %}

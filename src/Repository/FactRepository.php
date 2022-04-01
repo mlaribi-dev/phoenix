@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Fact;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Prophecy\Doubler\ClassPatch\HhvmExceptionPatch;
 
 /**
  * @method Fact|null find($id, $lockMode = null, $lockVersion = null)
@@ -17,6 +18,15 @@ class FactRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Fact::class);
+    }
+
+    public function findFactsToConfirm(): array
+    {
+        return $this->createQueryBuilder('f')
+        ->andWhere('f.is_confirmed = :confirm')
+        ->setParameter('confirm',0)
+        ->getQuery()
+        ->getResult();
     }
 
     // /**

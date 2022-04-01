@@ -13,7 +13,7 @@
                 <th>Slug</th>
                 <th>Value</th>
                 <th>Color</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -23,10 +23,10 @@
                 <td>{{ status.name }}</td>
                 <td>{{ status.slug }}</td>
                 <td>{{ status.value }}</td>
-                <td>{{ status.color }}</td>
+                <td style=" width : 50px; height : 50px; background : {{ status.color }};"></td>
                 <td>
-                    <a href="{{ path('status_show', {'id': status.id}) }}">show</a>
-                    <a href="{{ path('status_edit', {'id': status.id}) }}">edit</a>
+                    <a href="{{ path('status_show', {'id': status.id}) }}"><button type="button" class="btn btn-info">Show</button></a>
+                    <a href="{{ path('status_edit', {'id': status.id}) }}"><button type="button" class="btn btn-primary">Edit</button></a>
                 </td>
             </tr>
         {% else %}
@@ -37,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('status_new') }}">Create new</a>
+    <a href="{{ path('status_new') }}"><button type="button" class="btn btn-success">New</button></a>
 {% endblock %}

@@ -38,7 +38,7 @@ class Project
     private $wallet;
 
 
-    #[ORM\Column(type: 'integer')]
+    #[ORM\Column(type: 'string')]
     private $code;
 
     #[ORM\ManyToOne(targetEntity: Budget::class, inversedBy: 'projects')]
@@ -50,7 +50,7 @@ class Project
     #[ORM\OneToMany(mappedBy: 'project', targetEntity: Risk::class)]
     private $risks;
 
-    #[ORM\OneToMany(mappedBy: 'project', targetEntity: Fact::class)]
+    #[ORM\OneToMany(mappedBy: 'project', targetEntity: Fact::class, cascade:["remove"])]
     private $facts;
 
     #[ORM\ManyToOne(targetEntity: Team::class, inversedBy: 'projects')]
@@ -166,12 +166,12 @@ class Project
 
 
 
-    public function getCode(): ?int
+    public function getCode(): ?string
     {
         return $this->code;
     }
 
-    public function setCode(int $code): self
+    public function setCode(string $code): self
     {
         $this->code = $code;
 
@@ -298,6 +298,8 @@ class Project
         return $this;
     }
 
+
+  
 
 
 

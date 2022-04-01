@@ -21,3 +21,33 @@ body
 {
     display: none;
 }
+
+.title
+{
+    text-align: center;
+}
+
+div.screen-left
+{
+    float: left;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: normal;
+    padding: 0;
+
+}
+
+div.screen-right
+{
+    width: 45%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    align-items: normal;
+}
+
+.fact-list
+{
+    list-style-type: none;
+}

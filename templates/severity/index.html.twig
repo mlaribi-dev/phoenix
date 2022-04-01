@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Severity index{% endblock %}
+
+{% block body %}
+    <h1>Severity index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Level</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for severity in severities %}
+            <tr>
+                <td>{{ severity.id }}</td>
+                <td>{{ severity.name }}</td>
+                <td>{{ severity.level }}</td>
+                <td>
+                    <a href="{{ path('severity_show', {'id': severity.id}) }}">show</a>
+                    <a href="{{ path('severity_edit', {'id': severity.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('severity_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Severity{% endblock %}
+
+{% block body %}
+    <h1>Edit Severity</h1>
+
+    {{ include('severity/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('severity_index') }}">back to list</a>
+
+    {{ include('severity/_delete_form.html.twig') }}
+{% endblock %}

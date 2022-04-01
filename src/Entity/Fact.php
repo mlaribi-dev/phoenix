@@ -28,6 +28,9 @@ class Fact
     #[ORM\ManyToOne(targetEntity: Project::class, inversedBy: 'facts')]
     private $project;
 
+    #[ORM\Column(type: 'boolean')]
+    private $is_confirmed;
+
     
 
 
@@ -93,6 +96,18 @@ class Fact
     public function setProject(?Project $project): self
     {
         $this->project = $project;
+
+        return $this;
+    }
+
+    public function getIsConfirmed(): ?bool
+    {
+        return $this->is_confirmed;
+    }
+
+    public function setIsConfirmed(bool $is_confirmed): self
+    {
+        $this->is_confirmed = $is_confirmed;
 
         return $this;
     }

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Risk index{% endblock %}
+
+{% block body %}
+    <h1>Risk index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Identification_date</th>
+                <th>Resolved_date</th>
+                <th>Severity</th>
+                <th>Propability</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for risk in risks %}
+            <tr>
+                <td>{{ risk.id }}</td>
+                <td>{{ risk.name }}</td>
+                <td>{{ risk.identificationDate ? risk.identificationDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ risk.resolvedDate ? risk.resolvedDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ risk.severity.name}}</td>
+                <td>{{ risk.probability.name}}</td>
+                <td>
+                    <a href="{{ path('risk_show', {'id': risk.id}) }}">show</a>
+                    <a href="{{ path('risk_edit', {'id': risk.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    <a href="{{ path('risk_new') }}">Create new</a>
+{% endblock %}

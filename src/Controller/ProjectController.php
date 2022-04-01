@@ -24,7 +24,7 @@ class ProjectController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name:'app_new_project')]
+    #[Route('/project/new', name:'app_new_project')]
     public function new(Request $request,EntityManagerInterface $entityManager): Response
     {
         $project = new Project();
@@ -47,12 +47,42 @@ class ProjectController extends AbstractController
         ]);
     }
 
-    #[Route('/show/{id}', name:'app_show_project')]
+    #[Route('/project/show/{id}', name:'app_show_project')]
 
     public function show(Project $project) : Response
     {
         return $this->render('project/show.html.twig',[
             'project' => $project,
         ]);
+    }
+
+    
+    #[Route('/project/{id}/edit', name: 'app_edit_project', methods: ['GET', 'POST'])]
+    public function edit(Request $request, Project $project, EntityManagerInterface $entityManager): Response
+    {
+        $form = $this->createForm(ProjectType::class, $project);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_homepage', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('project/edit.html.twig', [
+            'project' => $project,
+            'form' => $form,
+        ]);
+    }
+
+    #[Route('/project/delete/{id}', name: 'app_project_delete', methods: ['POST'])]
+    public function delete(Request $request, Project $project, EntityManagerInterface $entityManager): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$project->getId(), $request->request->get('_token'))) {
+            $entityManager->remove($project);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('app_homepage', [], Response::HTTP_SEE_OTHER);
     }
 }

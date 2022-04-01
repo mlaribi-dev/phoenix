@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Probability{% endblock %}
+
+{% block body %}
+    <h1>Edit Probability</h1>
+
+    {{ include('probability/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('probability_index') }}">back to list</a>
+
+    {{ include('probability/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fact index{% endblock %}
+
+{% block body %}
+    <h1>Fact index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Is_confirmed</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for fact in facts %}
+            <tr>
+                <td>{{ fact.id }}</td>
+                <td>{{ fact.name }}</td>
+                <td>{{ fact.date ? fact.date|date('Y-m-d') : '' }}</td>
+                <td>{{ fact.description }}</td>
+                <td>{{ fact.isConfirmed ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('fact_show', {'id': fact.id}) }}"><button type="button" class="btn btn-info">Show</button></a>
+                    <a href="{{ path('fact_edit', {'id': fact.id}) }}"><button type="button" class="btn btn-primary">Edit</button></a>
+                    {% if fact.isConfirmed == 0 %}
+                        <a href="{{ path('fact_confirmation', {'id': fact.id}) }}"><button type="button" class="btn btn-success">Confirmation</button></a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('fact_new') }}">Create new</a>
+{% endblock %}

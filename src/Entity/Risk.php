@@ -22,14 +22,15 @@ class Risk
     #[ORM\Column(type: 'datetime')]
     private $resolved_date;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $severity;
-
-    #[ORM\Column(type: 'string', length: 255)]
-    private $propability;
 
     #[ORM\ManyToOne(targetEntity: Project::class, inversedBy: 'risks')]
     private $project;
+
+    #[ORM\ManyToOne(targetEntity: Severity::class, inversedBy: 'risks')]
+    private $severity;
+
+    #[ORM\ManyToOne(targetEntity: Probability::class, inversedBy: 'risks')]
+    private $probability;
 
 
 
@@ -74,29 +75,6 @@ class Risk
         return $this;
     }
 
-    public function getSeverity(): ?string
-    {
-        return $this->severity;
-    }
-
-    public function setSeverity(string $severity): self
-    {
-        $this->severity = $severity;
-
-        return $this;
-    }
-
-    public function getPropability(): ?string
-    {
-        return $this->propability;
-    }
-
-    public function setPropability(string $propability): self
-    {
-        $this->propability = $propability;
-
-        return $this;
-    }
 
     public function getProject(): ?Project
     {
@@ -106,6 +84,30 @@ class Risk
     public function setProject(?Project $project): self
     {
         $this->project = $project;
+
+        return $this;
+    }
+
+    public function getSeverity(): ?Severity
+    {
+        return $this->severity;
+    }
+
+    public function setSeverity(?Severity $severity): self
+    {
+        $this->severity = $severity;
+
+        return $this;
+    }
+
+    public function getProbability(): ?Probability
+    {
+        return $this->probability;
+    }
+
+    public function setProbability(?Probability $probability): self
+    {
+        $this->probability = $probability;
 
         return $this;
     }
