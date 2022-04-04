@@ -17,8 +17,6 @@ class RiskFixtures extends Fixture implements DependentFixtureInterface
         $risk->setName('élevé'.$i);
         $risk->setIdentificationDate(new \DateTime());
         $risk->setResolvedDate(new \DateTime());
-        $risk->setSeverity('élevé'.$i);
-        $risk->setPropability('élevé');
         $risk->setProject($this->getReference('project_'.$i));
         $manager->persist($risk);
         

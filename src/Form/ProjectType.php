@@ -74,7 +74,6 @@ class ProjectType extends AbstractType
                 'choice_label'=>'initialValue'
             ])  
             ->add('code')
-            ->add('state')
             ->add('archive')
             ->add('submit',SubmitType::class)
             

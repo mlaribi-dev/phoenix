@@ -35,6 +35,7 @@ div.screen-left
     flex-direction: column;
     align-items: normal;
     padding: 0;
+    
 
 }
 
@@ -50,4 +51,16 @@ div.screen-right
 .fact-list
 {
     list-style-type: none;
+}
+ 
+.card
+{
+    width: 9rem;
+}
+
+.square
+{
+    width : 20px; 
+    height : 20px;
+    display: inline-block;
 }

@@ -15,7 +15,7 @@
     <h5 class="card-text"> Description : {{project.description}}</h5> 
     <div>
         <h5>- Code : {{project.code}}</h5>
-        <h5>- Statut : <div style=" width : 20px; height : 20px; background : {{ project.status.color }}; display: inline-block;"></div></h5>  
+        <h5>- Statut : <span class="square" style=" background : {{ project.status.color }};"></span></h5>  
         <h5>- Equipe client : {{project.clientTeam}} </h5>
         <h5>- Equipe de production : {{project.productionTeam}}</h5>
         <h5>- Date de début : {{project.startedAt ? project.startedAt|date('d/m/Y') : ' '}}</h5>

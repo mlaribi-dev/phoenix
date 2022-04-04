@@ -29,6 +29,7 @@ class FactFixtures extends Fixture implements DependentFixtureInterface
                 ->setDescription('random description')
                 ->setMilestone($milestone)
                 ->setProject($project)
+                ->setIsConfirmed(true)
             ;
             $manager->persist($fact);
         }

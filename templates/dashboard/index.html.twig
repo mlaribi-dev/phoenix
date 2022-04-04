@@ -4,14 +4,14 @@
 
 {% block body %}
 
-<h1 style="text-align:center">Mon tableau de bord</h1>
+<h1 class="title">Mon tableau de bord</h1>
 
 <div class="container">
   <div class="screen-left">
     <h1><i class="fa fa-flag"></i> Mes derniers projets</h1>
       <div class="cards d-flex flex-wrap">
         {% for project in projects %}
-          <div class="card" style="width:9rem">
+          <div class="card" >
             <img class="card-img-top" src="./images/logo.png" alt="Card image" >
             <div class="card-body">
               <h5 class="card-title">{{project.name}}</h5>
@@ -25,7 +25,7 @@
           <h1><i class="fa fa-exclamation-circle"></i> Projets avec risques</h1>
             <div class="cards d-flex flex-wrap" >
             {% for project in projectRisk %}
-            <div class="card" style="width:9rem">
+            <div class="card" >
               <img class="card-img-top" src="./images/logo.png" alt="Card image" >
               <div class="card-body">
                 <h5 class="card-title">{{project.name}}</h5>

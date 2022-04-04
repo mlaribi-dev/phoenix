@@ -162,8 +162,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-
-
     /**
      * @return Collection<int, Wallet>
      */
@@ -224,5 +222,4 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-  
 }

@@ -18,8 +18,6 @@ class Wallet
     #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
-
-
     #[ORM\OneToMany(mappedBy: 'wallet', targetEntity: Project::class)]
     private $projects;
 
@@ -48,8 +46,6 @@ class Wallet
 
         return $this;
     }
-
-
 
     /**
      * @return Collection<int, Project>

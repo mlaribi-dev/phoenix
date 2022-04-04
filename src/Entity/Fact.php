@@ -32,9 +32,6 @@ class Fact
     private $is_confirmed;
 
     
-
-
-
     public function getId(): ?int
     {
         return $this->id;

@@ -44,9 +44,6 @@ class Project
     #[ORM\ManyToOne(targetEntity: Budget::class, inversedBy: 'projects')]
     private $budget;
 
-    #[ORM\Column(type: 'boolean')]
-    private $state;
-
     #[ORM\OneToMany(mappedBy: 'project', targetEntity: Risk::class)]
     private $risks;
 
@@ -61,10 +58,6 @@ class Project
 
     #[ORM\Column(type: 'boolean')]
     private $archive;
-
-    
-
-  
 
     public function __construct()
     {

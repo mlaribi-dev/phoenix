@@ -57,9 +57,6 @@ class Team
         return $this;
     }
 
- 
-
-
     /**
      * @return Collection<int, User>
      */
