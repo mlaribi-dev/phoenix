@@ -30,7 +30,6 @@ class UserType extends AbstractType
                 'placeholder' => 'Veuillez chosir un rôle ',
                 
             ])
-            ->add('password')
             ->add('firstName')
             ->add('lastName')
             ->add('team',EntityType::class,[

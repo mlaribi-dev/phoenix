@@ -56,6 +56,14 @@ class ProjectType extends AbstractType
             ])
             ->add('startedAt')
             ->add('endedAt')
+            ->add('status', EntityType::class,[
+                'label'=>'Status',
+                'class'=> Status::class,
+                'query_builder' => function(StatusRepository $er){
+                    return $er->createQueryBuilder('st')
+                    ->orderBy('st.id');
+                }
+            ])
             ->add('budget',EntityType::class,[
                 'label' => 'Budget',
                 'class'=> Budget::class,
