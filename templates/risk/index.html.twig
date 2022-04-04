@@ -22,8 +22,8 @@
             <tr>
                 <td>{{ risk.id }}</td>
                 <td>{{ risk.name }}</td>
-                <td>{{ risk.identificationDate ? risk.identificationDate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ risk.resolvedDate ? risk.resolvedDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ risk.identificationDate ? risk.identificationDate|date('Y-m-d ') : '' }}</td>
+                <td>{{ risk.resolvedDate ? risk.resolvedDate|date('Y-m-d') : '' }}</td>
                 <td>{{ risk.severity.name}}</td>
                 <td>{{ risk.probability.name}}</td>
                 <td>
