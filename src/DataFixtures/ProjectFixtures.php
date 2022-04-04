@@ -44,7 +44,6 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
             $project->setStatus($status);
             $project->setCode(1);
             $project->setArchive(false);
-            $project->setState('en cours');
             $manager->persist($project);
             $this->addReference('project_'.$i,$project);
             

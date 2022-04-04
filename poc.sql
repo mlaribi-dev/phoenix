@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Ven 01 Avril 2022 à 12:40
+-- Généré le :  Lun 04 Avril 2022 à 13:53
 -- Version du serveur :  5.7.11
 -- Version de PHP :  7.0.3
 
@@ -39,9 +39,9 @@ CREATE TABLE `budget` (
 --
 
 INSERT INTO `budget` (`id`, `initial_value`, `consumed_value`, `to_do`, `landing_budget`) VALUES
-(34, 500000, 35000, 15000, 500000),
-(35, 400000, 35000, 15000, 400000),
-(36, 300000, 35000, 15000, 300000);
+(22, 50000, 35000, 15000, 50000),
+(23, 50000, 35000, 15000, 50000),
+(24, 50000, 35000, 15000, 50000);
 
 -- --------------------------------------------------------
 
@@ -60,43 +60,43 @@ CREATE TABLE `doctrine_migration_versions` (
 --
 
 INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
-('DoctrineMigrations\\Version20220201140825', '2022-02-01 14:17:08', 69),
-('DoctrineMigrations\\Version20220201152928', '2022-02-01 15:29:34', 136),
-('DoctrineMigrations\\Version20220221124137', '2022-02-21 12:41:54', 61),
-('DoctrineMigrations\\Version20220221125906', '2022-02-21 12:59:17', 194),
-('DoctrineMigrations\\Version20220221151650', '2022-02-21 15:17:00', 74),
-('DoctrineMigrations\\Version20220222105300', '2022-02-22 10:53:11', 141),
-('DoctrineMigrations\\Version20220222105757', '2022-02-22 10:58:01', 64),
-('DoctrineMigrations\\Version20220222110404', '2022-02-22 11:04:08', 56),
-('DoctrineMigrations\\Version20220222125815', '2022-02-22 12:58:22', 377),
-('DoctrineMigrations\\Version20220222130110', '2022-02-22 13:01:15', 59),
-('DoctrineMigrations\\Version20220222132137', '2022-02-22 13:21:43', 81),
-('DoctrineMigrations\\Version20220222132805', '2022-02-22 13:28:09', 74),
-('DoctrineMigrations\\Version20220222133339', '2022-02-22 13:33:42', 192),
-('DoctrineMigrations\\Version20220222133627', '2022-02-22 13:36:30', 141),
-('DoctrineMigrations\\Version20220222134024', '2022-02-22 13:40:26', 145),
-('DoctrineMigrations\\Version20220222134653', '2022-02-22 13:46:56', 166),
-('DoctrineMigrations\\Version20220222140100', '2022-02-22 14:01:04', 292),
-('DoctrineMigrations\\Version20220222140508', '2022-02-22 14:05:11', 242),
-('DoctrineMigrations\\Version20220222140558', '2022-02-22 14:06:02', 172),
-('DoctrineMigrations\\Version20220228095450', '2022-02-28 09:55:01', 1925),
-('DoctrineMigrations\\Version20220228110335', '2022-02-28 11:03:40', 251),
-('DoctrineMigrations\\Version20220228125234', '2022-02-28 12:52:38', 193),
-('DoctrineMigrations\\Version20220228132144', '2022-02-28 13:21:47', 149),
-('DoctrineMigrations\\Version20220228133812', '2022-02-28 13:38:14', 205),
-('DoctrineMigrations\\Version20220228141600', '2022-02-28 14:16:07', 157),
-('DoctrineMigrations\\Version20220228142006', '2022-02-28 14:20:09', 199),
-('DoctrineMigrations\\Version20220228142552', '2022-02-28 14:25:56', 157),
-('DoctrineMigrations\\Version20220228142839', '2022-02-28 14:28:42', 22),
-('DoctrineMigrations\\Version20220228144455', '2022-02-28 14:44:58', 165),
-('DoctrineMigrations\\Version20220317091103', '2022-03-17 09:11:19', 508),
-('DoctrineMigrations\\Version20220321135951', '2022-03-21 14:00:09', 482),
-('DoctrineMigrations\\Version20220321141007', '2022-03-21 14:10:10', 191),
-('DoctrineMigrations\\Version20220325090216', '2022-03-25 09:02:25', 240),
-('DoctrineMigrations\\Version20220325092221', '2022-03-25 09:22:25', 230),
-('DoctrineMigrations\\Version20220325092408', '2022-03-25 09:24:11', 220),
-('DoctrineMigrations\\Version20220330134639', '2022-03-30 13:46:43', 376),
-('DoctrineMigrations\\Version20220330135845', '2022-03-30 13:58:51', 127);
+('DoctrineMigrations\\Version20220201140825', '2022-04-04 13:32:33', 61),
+('DoctrineMigrations\\Version20220201152928', '2022-04-04 13:32:33', 31),
+('DoctrineMigrations\\Version20220221124137', '2022-04-04 13:32:33', 24),
+('DoctrineMigrations\\Version20220221125906', '2022-04-04 13:32:33', 117),
+('DoctrineMigrations\\Version20220221151650', '2022-04-04 13:32:33', 26),
+('DoctrineMigrations\\Version20220222105300', '2022-04-04 13:32:33', 42),
+('DoctrineMigrations\\Version20220222105757', '2022-04-04 13:32:33', 23),
+('DoctrineMigrations\\Version20220222110404', '2022-04-04 13:32:33', 32),
+('DoctrineMigrations\\Version20220222125815', '2022-04-04 13:32:33', 143),
+('DoctrineMigrations\\Version20220222130110', '2022-04-04 13:32:33', 19),
+('DoctrineMigrations\\Version20220222132137', '2022-04-04 13:32:33', 25),
+('DoctrineMigrations\\Version20220222132805', '2022-04-04 13:32:34', 23),
+('DoctrineMigrations\\Version20220222133339', '2022-04-04 13:32:34', 0),
+('DoctrineMigrations\\Version20220222133627', '2022-04-04 13:32:34', 109),
+('DoctrineMigrations\\Version20220222134024', '2022-04-04 13:32:34', 1),
+('DoctrineMigrations\\Version20220222134653', '2022-04-04 13:32:34', 110),
+('DoctrineMigrations\\Version20220222140100', '2022-04-04 13:32:34', 194),
+('DoctrineMigrations\\Version20220222140508', '2022-04-04 13:32:34', 93),
+('DoctrineMigrations\\Version20220222140558', '2022-04-04 13:32:34', 59),
+('DoctrineMigrations\\Version20220228095450', '2022-04-04 13:32:34', 1),
+('DoctrineMigrations\\Version20220228110335', '2022-04-04 13:32:34', 128),
+('DoctrineMigrations\\Version20220228125234', '2022-04-04 13:32:34', 125),
+('DoctrineMigrations\\Version20220228132144', '2022-04-04 13:32:34', 108),
+('DoctrineMigrations\\Version20220228133812', '2022-04-04 13:32:34', 0),
+('DoctrineMigrations\\Version20220228141600', '2022-04-04 13:32:34', 56),
+('DoctrineMigrations\\Version20220228142006', '2022-04-04 13:32:35', 107),
+('DoctrineMigrations\\Version20220228142552', '2022-04-04 13:32:35', 126),
+('DoctrineMigrations\\Version20220228142839', '2022-04-04 13:32:35', 1),
+('DoctrineMigrations\\Version20220228144455', '2022-04-04 13:32:35', 70),
+('DoctrineMigrations\\Version20220317091103', '2022-04-04 13:32:35', 48),
+('DoctrineMigrations\\Version20220321135951', '2022-04-04 13:32:35', 48),
+('DoctrineMigrations\\Version20220321141007', '2022-04-04 13:32:35', 46),
+('DoctrineMigrations\\Version20220325090216', '2022-04-04 13:32:35', 45),
+('DoctrineMigrations\\Version20220325092221', '2022-04-04 13:32:35', 115),
+('DoctrineMigrations\\Version20220325092408', '2022-04-04 13:32:35', 136),
+('DoctrineMigrations\\Version20220330134639', '2022-04-04 13:32:35', 56),
+('DoctrineMigrations\\Version20220330135845', '2022-04-04 13:32:35', 47);
 
 -- --------------------------------------------------------
 
@@ -110,23 +110,25 @@ CREATE TABLE `fact` (
   `date` datetime NOT NULL,
   `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `milestone_id` int(11) DEFAULT NULL,
-  `project_id` int(11) DEFAULT NULL,
-  `is_confirmed` tinyint(1) NOT NULL
+  `is_confirmed` tinyint(1) NOT NULL,
+  `project_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Contenu de la table `fact`
 --
 
-INSERT INTO `fact` (`id`, `name`, `date`, `description`, `milestone_id`, `project_id`, `is_confirmed`) VALUES
-(4, 'fact 0', '2022-02-28 13:55:12', 'Bug ', 20, 81, 1),
-(5, 'fact 1', '2022-01-28 00:00:00', 'Arrêt brusque', 21, 89, 1),
-(7, 'fact 3', '2022-02-28 00:00:00', 'Réglage des conventions', 21, 83, 1),
-(8, 'fact 4', '2021-01-18 00:00:00', 'Problème de récupération des données', 19, 89, 1),
-(9, 'fact 5', '2022-02-28 13:55:12', 'Amélioration de la page d\'accueil', 19, 85, 1),
-(10, 'Fact 6', '2022-03-16 08:20:00', 'Souci d\'installation de dépendance', 20, 81, 0),
-(11, 'fact 8', '2022-01-01 00:00:00', 'Amélioration du visuel', 19, NULL, 0),
-(12, 'fact 8', '2021-04-12 00:00:00', 'Long chargement d\'une page', 22, NULL, 0);
+INSERT INTO `fact` (`id`, `name`, `date`, `description`, `milestone_id`, `is_confirmed`, `project_id`) VALUES
+(1, 'fact 0', '2022-04-04 13:47:16', 'random description', 23, 1, 37),
+(2, 'fact 1', '2022-04-04 13:47:16', 'random description', 23, 1, 31),
+(3, 'fact 2', '2022-04-04 13:47:16', 'random description', 24, 1, 31),
+(4, 'fact 3', '2022-04-04 13:47:16', 'random description', 22, 1, 38),
+(5, 'fact 4', '2022-04-04 13:47:16', 'random description', 22, 1, 39),
+(6, 'fact 5', '2022-04-04 13:47:16', 'random description', 22, 1, 40),
+(7, 'fact 6', '2022-04-04 13:47:16', 'random description', 22, 1, 33),
+(8, 'fact 7', '2022-04-04 13:47:16', 'random description', 23, 1, 35),
+(9, 'fact 8', '2022-04-04 13:47:16', 'random description', 23, 1, 36),
+(10, 'fact 9', '2022-04-04 13:47:16', 'random description', 24, 1, 32);
 
 -- --------------------------------------------------------
 
@@ -147,11 +149,9 @@ CREATE TABLE `milestone` (
 --
 
 INSERT INTO `milestone` (`id`, `name`, `value`, `state`, `date_obtain`) VALUES
-(19, 'Début de conception', 1, 1, '2022-03-10'),
-(20, 'Fin de la conception', 2, 1, '2022-04-06'),
-(21, 'Livraison en préproduction', 3, 1, '2022-05-26'),
-(22, 'Début des développements', 4, 0, '2021-01-16'),
-(23, 'Fin des développements', 5, 0, '2022-03-12');
+(22, 'Début de conception', 1, 1, NULL),
+(23, 'Fin de la conception', 2, 1, NULL),
+(24, 'Livraison en préproduction', 3, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -170,9 +170,8 @@ CREATE TABLE `probability` (
 --
 
 INSERT INTO `probability` (`id`, `name`, `level`) VALUES
-(1, 'Peu probable', 1),
-(2, 'Probable', 2),
-(3, 'Très probable', 3);
+(15, 'Prevu', 1),
+(16, 'Terminé', 3);
 
 -- --------------------------------------------------------
 
@@ -193,7 +192,6 @@ CREATE TABLE `project` (
   `client_team_id` int(11) DEFAULT NULL,
   `budget_id` int(11) DEFAULT NULL,
   `code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `state` tinyint(1) NOT NULL,
   `archive` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -201,14 +199,17 @@ CREATE TABLE `project` (
 -- Contenu de la table `project`
 --
 
-INSERT INTO `project` (`id`, `name`, `description`, `started_at`, `ended_at`, `created_at`, `status_id`, `wallet_id`, `production_team_id`, `client_team_id`, `budget_id`, `code`, `state`, `archive`) VALUES
-(81, 'Application mobile', 'Réalisation d\'une app mobile en C#', '2022-02-28', '2022-03-22', '2019-02-14 13:55:11', 72, 12, 10, 10, 36, '1a', 1, 0),
-(82, 'Site Internet', 'Réalisation d\'un site Wordpress', '2022-02-28', '2022-04-23', '2022-02-28 13:55:11', 71, 12, 9, 10, 34, '2b', 1, 1),
-(83, 'Création d\'une VM', 'Création d\'une machine virtuelle', '2022-02-28', '2022-09-28', '2022-02-28 13:55:11', 71, 11, 11, 10, 34, '3c', 1, 1),
-(85, 'Site Wordpress', 'Réalisation d\'un site marchand', '2022-02-28', '2022-05-31', '2022-02-28 13:55:11', 73, 13, 12, 10, 35, '5e', 1, 1),
-(88, 'Création Logiciel', 'Création d\'un logiciel en Pyhton', '2018-02-28', '2019-11-20', '2022-02-28 13:55:11', 73, 12, 10, 11, 35, '8h', 1, 0),
-(89, 'Site Symfony', 'Réalisation d\'un site en Symfony', '2022-02-28', '2023-07-21', '2022-02-28 13:55:11', 72, 13, 11, 9, 35, '9i', 1, 0),
-(90, 'Jeu en Python', 'Réalisation d\'un Jeu Mario en Python', '2022-05-07', '2021-06-13', '2022-03-30 14:13:44', 72, 11, 9, 9, 34, 'z26', 1, 0);
+INSERT INTO `project` (`id`, `name`, `description`, `started_at`, `ended_at`, `created_at`, `status_id`, `wallet_id`, `production_team_id`, `client_team_id`, `budget_id`, `code`, `archive`) VALUES
+(31, 'test0', 'Premier test0', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 22, NULL, 9, 10, 23, '1', 0),
+(32, 'test1', 'Premier test1', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 24, 4, 10, 9, 23, '1', 0),
+(33, 'test2', 'Premier test2', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 3, 9, 9, 22, '1', 0),
+(34, 'test3', 'Premier test3', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 4, 10, 10, 22, '1', 0),
+(35, 'test4', 'Premier test4', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 3, 10, 10, 23, '1', 0),
+(36, 'test5', 'Premier test5', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, NULL, 10, 10, 24, '1', 0),
+(37, 'test6', 'Premier test6', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 3, 10, 10, 23, '1', 0),
+(38, 'test7', 'Premier test7', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, NULL, 9, 10, 23, '1', 0),
+(39, 'test8', 'Premier test8', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 22, NULL, 10, 9, 23, '1', 0),
+(40, 'test9', 'Premier test9', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 4, 9, 9, 24, '1', 0);
 
 -- --------------------------------------------------------
 
@@ -231,9 +232,9 @@ CREATE TABLE `risk` (
 --
 
 INSERT INTO `risk` (`id`, `name`, `identification_date`, `resolved_date`, `project_id`, `severity_id`, `probability_id`) VALUES
-(25, 'Risque 1', '2022-02-28 13:55:11', '2022-02-28 13:55:11', 81, 1, 1),
-(26, 'Risque 2', '2022-02-28 13:55:12', '2022-02-28 13:55:12', 82, 2, 2),
-(27, 'Risque 3', '2022-02-28 13:55:12', '2022-02-28 13:55:12', 83, 3, 3);
+(7, 'élevé0', '2022-04-04 13:47:15', '2022-04-04 13:47:15', 31, NULL, NULL),
+(8, 'élevé1', '2022-04-04 13:47:15', '2022-04-04 13:47:15', 32, NULL, NULL),
+(9, 'élevé2', '2022-04-04 13:47:15', '2022-04-04 13:47:15', 33, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -252,9 +253,9 @@ CREATE TABLE `severity` (
 --
 
 INSERT INTO `severity` (`id`, `name`, `level`) VALUES
-(1, 'Mineur', 1),
-(2, 'Modéré', 2),
-(3, 'Majeur', 3);
+(22, 'Mineur', 1),
+(23, 'Modéré', 2),
+(24, 'Majeur', 3);
 
 -- --------------------------------------------------------
 
@@ -275,9 +276,9 @@ CREATE TABLE `status` (
 --
 
 INSERT INTO `status` (`id`, `name`, `slug`, `value`, `color`) VALUES
-(71, 'Prévu', 'UPCOMING', 0, '#FF0000'),
-(72, 'En cours', 'IN PROGRESS', 1, '#FFFF00'),
-(73, 'Terminé', 'FINISHED', 3, '#33ff33');
+(22, 'Prevu', 'UPCOMING', 0, '#F63C14'),
+(23, 'En cours', 'IN PROGRESS', 1, '#E5F614'),
+(24, 'Terminé', 'FINISHED', 3, '#12E327');
 
 -- --------------------------------------------------------
 
@@ -296,10 +297,8 @@ CREATE TABLE `team` (
 --
 
 INSERT INTO `team` (`id`, `name`, `manager_id`) VALUES
-(9, 'Équipe 1', 182),
-(10, 'Équipe 2', 183),
-(11, 'Equipe 3', 184),
-(12, 'Equipe 4 ', 185);
+(9, 'Équipe 1', 72),
+(10, 'Équipe 2', 76);
 
 -- --------------------------------------------------------
 
@@ -322,15 +321,16 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `email`, `roles`, `password`, `first_name`, `last_name`, `team_id`) VALUES
-(178, 'mlaribi@gmail.com', '["ROLE_ADMIN"]', '$2y$13$AVp3zXo1GidbVANBpJiT8efspHLwteX.YftVu9l0lgrvKjWl6Ghy6', 'Mehdi', 'Laribi', 9),
-(179, 'tlegrand@gmail.com', '[]', '$2y$13$5yl9L7go352GITeMzQd9NuSuckSCsHjokf2AJHOz3xpWVRcKtcfKq', 'Thomas', 'Legrand', 9),
-(180, 'pdublier@gmail.com', '[]', '$2y$13$MoGGp4zdm9T6p0YSkxfLCOQFHYUG5md7sML8FwlJ6PtM1ugo55jom', 'Paul', 'Dubier', 10),
-(181, 'elebeau@gmail.com', '[]', '$2y$13$JLz.wAMZ19/rHwEADnX3IuK903YanJdpYWE7Zk13LIsGRoLKO7pnm', 'Emilie', 'Lebeau', 11),
-(182, 'gdupres@gmail.com', '[]', '$2y$13$YE3WGEcbjTKFCWjqPPExH.m0bDJIBfm4YTeTKtKNa4vuBAcY4.0vi', 'Grégory', 'Duprès', 12),
-(183, 'aperron@gmail.com', '[]', '$2y$13$tIGBsfVu1kBqZpUlKFF22ur4v4UFLVsEm96X7x6LnKKhKLw6D.MXa', 'Anna', 'Perron', 10),
-(184, 'kgarnot@gmail.com', '[]', '$2y$13$sWalKR9tKYcvm..mLqT/SO99a1Gm95GklgR4I.8TYHCJ1cBDynW4u', 'Kevin', 'Garnot', 11),
-(185, 'jberin@gmail.com', '[]', '$2y$13$PuaaH2dMWsMrC7HD2bu.V.v12YuaDBx7C6EQxADNsCEZ6nMmUVMem', 'Julien', 'Berin', 12),
-(186, 'swarme@gmail.com', '[]', '$2y$13$Xb0VMHg0dMZNhFCMALhPterLD2vW1VM/x712WVlXZGVsbZWn7iW.e', 'Solange', 'Warme', 9);
+(71, 'mlaribi@gmail.com', '["ROLE_ADMIN"]', '$2y$13$usutQH.8QvPgYgsSU4Lw.uwBqR.cqhHuYVrCgMbgWVGYOviisrxJy', 'Mehdi', 'Laribi', 10),
+(72, 'user1@gmail.com', '[]', '$2y$13$rhnrIFMdX3AIyW2rTdO9au5HqkpHjF9NUN4AsoDNcXedrTdftfIgy', 'firstname1', 'lastname', NULL),
+(73, 'user2@gmail.com', '[]', '$2y$13$Iiowi5fArHI48Xy0GIoqR.nd.8eUm8v.xDIceFcWaQSxqbqm.9Bdm', 'firstname2', 'lastname', 9),
+(74, 'user3@gmail.com', '[]', '$2y$13$zHCBfpHmY/hL36E8Whh.pufSW8v9lE6LdXQ2z55jjTLgZm9sFXTbK', 'firstname3', 'lastname', 9),
+(75, 'user4@gmail.com', '[]', '$2y$13$nk7w.cYPi4f1VU2XncxyseqyJSZWmWRvTDiwPMv6prjyed8/jJhDO', 'firstname4', 'lastname', NULL),
+(76, 'user5@gmail.com', '[]', '$2y$13$7VUknMIatQ3/AeK4CP8OAOdtQ5n71nbNrDvgOre7okEe4D9w0eesG', 'firstname5', 'lastname', NULL),
+(77, 'user6@gmail.com', '[]', '$2y$13$eghvy8zOBE9uvXy0mNCTjeEk7G7TdDLrBhYIrvFlQ5Ft7yosYmYEG', 'firstname6', 'lastname', 10),
+(78, 'user7@gmail.com', '[]', '$2y$13$MTS6aqFvib9CRm8HMMAGIe4JWt/16s2quiuCsh1OmxDPXghEmzsjO', 'firstname7', 'lastname', 10),
+(79, 'user8@gmail.com', '[]', '$2y$13$9QSzVif7.m/zPHl9sKCdueHRBgqp6b3pNO6hABJ2AXh13NzcbnVEW', 'firstname8', 'lastname', NULL),
+(80, 'user9@gmail.com', '[]', '$2y$13$COmMnjS/IMrJ01nOBX2vM.RC8FYNv3jFWyC3Sez1uOwG9BAGp5D6u', 'firstname9', 'lastname', NULL);
 
 -- --------------------------------------------------------
 
@@ -349,9 +349,8 @@ CREATE TABLE `wallet` (
 --
 
 INSERT INTO `wallet` (`id`, `name`, `manager_id`) VALUES
-(11, 'Premier portefeuille', 179),
-(12, 'Deuxième portefeuille', 184),
-(13, 'Troisième portfeuille', 180);
+(3, 'Premier projet', 72),
+(4, 'Deuxième projet', 77);
 
 --
 -- Index pour les tables exportées
@@ -451,57 +450,57 @@ ALTER TABLE `wallet`
 -- AUTO_INCREMENT pour la table `budget`
 --
 ALTER TABLE `budget`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT pour la table `fact`
 --
 ALTER TABLE `fact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT pour la table `milestone`
 --
 ALTER TABLE `milestone`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT pour la table `probability`
 --
 ALTER TABLE `probability`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT pour la table `project`
 --
 ALTER TABLE `project`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 --
 -- AUTO_INCREMENT pour la table `risk`
 --
 ALTER TABLE `risk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT pour la table `severity`
 --
 ALTER TABLE `severity`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT pour la table `status`
 --
 ALTER TABLE `status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT pour la table `team`
 --
 ALTER TABLE `team`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=187;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 --
 -- AUTO_INCREMENT pour la table `wallet`
 --
 ALTER TABLE `wallet`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Contraintes pour les tables exportées
 --

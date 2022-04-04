@@ -2,7 +2,9 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Probability;
 use App\Entity\Risk;
+use App\Entity\Severity;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;

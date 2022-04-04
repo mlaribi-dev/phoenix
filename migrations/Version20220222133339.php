@@ -20,9 +20,9 @@ final class Version20220222133339 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE project ADD wallet_id INT DEFAULT NULL');
-        $this->addSql('ALTER TABLE project ADD CONSTRAINT FK_2FB3D0EE712520F3 FOREIGN KEY (wallet_id) REFERENCES wallet (id)');
-        $this->addSql('CREATE INDEX IDX_2FB3D0EE712520F3 ON project (wallet_id)');
+        //$this->addSql('ALTER TABLE project ADD wallet_id INT DEFAULT NULL');
+        //$this->addSql('ALTER TABLE project ADD CONSTRAINT FK_2FB3D0EE712520F3 FOREIGN KEY (wallet_id) REFERENCES wallet (id)');
+        //$this->addSql('CREATE INDEX IDX_2FB3D0EE712520F3 ON project (wallet_id)');
     }
 
     public function down(Schema $schema): void
