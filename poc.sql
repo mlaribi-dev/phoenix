@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Lun 04 Avril 2022 à 13:53
+-- Généré le :  Mer 06 Avril 2022 à 13:05
 -- Version du serveur :  5.7.11
 -- Version de PHP :  7.0.3
 
@@ -127,8 +127,8 @@ INSERT INTO `fact` (`id`, `name`, `date`, `description`, `milestone_id`, `is_con
 (6, 'fact 5', '2022-04-04 13:47:16', 'random description', 22, 1, 40),
 (7, 'fact 6', '2022-04-04 13:47:16', 'random description', 22, 1, 33),
 (8, 'fact 7', '2022-04-04 13:47:16', 'random description', 23, 1, 35),
-(9, 'fact 8', '2022-04-04 13:47:16', 'random description', 23, 1, 36),
-(10, 'fact 9', '2022-04-04 13:47:16', 'random description', 24, 1, 32);
+(9, 'fact 8', '2022-04-04 13:47:16', 'random description', 23, 0, 36),
+(10, 'fact 9', '2022-04-04 13:47:16', 'random description', 24, 0, 32);
 
 -- --------------------------------------------------------
 
@@ -149,9 +149,9 @@ CREATE TABLE `milestone` (
 --
 
 INSERT INTO `milestone` (`id`, `name`, `value`, `state`, `date_obtain`) VALUES
-(22, 'Début de conception', 1, 1, NULL),
-(23, 'Fin de la conception', 2, 1, NULL),
-(24, 'Livraison en préproduction', 3, 1, NULL);
+(22, 'Début de conception', 1, 0, '2022-04-13'),
+(23, 'Fin de la conception', 2, 1, '2022-04-18'),
+(24, 'Livraison en préproduction', 3, 1, '2022-04-14');
 
 -- --------------------------------------------------------
 
@@ -170,8 +170,9 @@ CREATE TABLE `probability` (
 --
 
 INSERT INTO `probability` (`id`, `name`, `level`) VALUES
-(15, 'Prevu', 1),
-(16, 'Terminé', 3);
+(15, 'Peu probable', 1),
+(16, 'Probable', 2),
+(17, 'Très probable', 3);
 
 -- --------------------------------------------------------
 
@@ -200,15 +201,15 @@ CREATE TABLE `project` (
 --
 
 INSERT INTO `project` (`id`, `name`, `description`, `started_at`, `ended_at`, `created_at`, `status_id`, `wallet_id`, `production_team_id`, `client_team_id`, `budget_id`, `code`, `archive`) VALUES
-(31, 'test0', 'Premier test0', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 22, NULL, 9, 10, 23, '1', 0),
+(31, 'test0', 'Premier test0', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 22, 4, 9, 10, 23, '1', 1),
 (32, 'test1', 'Premier test1', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 24, 4, 10, 9, 23, '1', 0),
-(33, 'test2', 'Premier test2', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 3, 9, 9, 22, '1', 0),
+(33, 'test2', 'Premier test2', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 3, 9, 9, 22, '1fffff', 0),
 (34, 'test3', 'Premier test3', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 4, 10, 10, 22, '1', 0),
 (35, 'test4', 'Premier test4', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 3, 10, 10, 23, '1', 0),
-(36, 'test5', 'Premier test5', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, NULL, 10, 10, 24, '1', 0),
+(36, 'test5', 'Premier test5', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 3, 10, 10, 24, '1', 0),
 (37, 'test6', 'Premier test6', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 3, 10, 10, 23, '1', 0),
-(38, 'test7', 'Premier test7', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, NULL, 9, 10, 23, '1', 0),
-(39, 'test8', 'Premier test8', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 22, NULL, 10, 9, 23, '1', 0),
+(38, 'test7', 'Premier test7', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 4, 9, 10, 23, '1', 0),
+(39, 'test8', 'Premier test8', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 22, 4, 10, 9, 23, '1', 0),
 (40, 'test9', 'Premier test9', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 4, 9, 9, 24, '1', 0);
 
 -- --------------------------------------------------------
@@ -232,9 +233,9 @@ CREATE TABLE `risk` (
 --
 
 INSERT INTO `risk` (`id`, `name`, `identification_date`, `resolved_date`, `project_id`, `severity_id`, `probability_id`) VALUES
-(7, 'élevé0', '2022-04-04 13:47:15', '2022-04-04 13:47:15', 31, NULL, NULL),
-(8, 'élevé1', '2022-04-04 13:47:15', '2022-04-04 13:47:15', 32, NULL, NULL),
-(9, 'élevé2', '2022-04-04 13:47:15', '2022-04-04 13:47:15', 33, NULL, NULL);
+(7, 'élevé0', '2022-04-04 13:47:15', '2022-04-04 13:47:15', 31, 22, 15),
+(8, 'élevé1', '2022-04-04 13:47:15', '2022-04-04 13:47:15', 32, 23, 16),
+(9, 'élevé2', '2022-04-04 13:47:15', '2022-04-04 13:47:15', 33, 24, 17);
 
 -- --------------------------------------------------------
 
@@ -322,15 +323,15 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `email`, `roles`, `password`, `first_name`, `last_name`, `team_id`) VALUES
 (71, 'mlaribi@gmail.com', '["ROLE_ADMIN"]', '$2y$13$usutQH.8QvPgYgsSU4Lw.uwBqR.cqhHuYVrCgMbgWVGYOviisrxJy', 'Mehdi', 'Laribi', 10),
-(72, 'user1@gmail.com', '[]', '$2y$13$rhnrIFMdX3AIyW2rTdO9au5HqkpHjF9NUN4AsoDNcXedrTdftfIgy', 'firstname1', 'lastname', NULL),
+(72, 'user1@gmail.com', '[]', '$2y$13$rhnrIFMdX3AIyW2rTdO9au5HqkpHjF9NUN4AsoDNcXedrTdftfIgy', 'firstname1', 'lastname', 9),
 (73, 'user2@gmail.com', '[]', '$2y$13$Iiowi5fArHI48Xy0GIoqR.nd.8eUm8v.xDIceFcWaQSxqbqm.9Bdm', 'firstname2', 'lastname', 9),
 (74, 'user3@gmail.com', '[]', '$2y$13$zHCBfpHmY/hL36E8Whh.pufSW8v9lE6LdXQ2z55jjTLgZm9sFXTbK', 'firstname3', 'lastname', 9),
-(75, 'user4@gmail.com', '[]', '$2y$13$nk7w.cYPi4f1VU2XncxyseqyJSZWmWRvTDiwPMv6prjyed8/jJhDO', 'firstname4', 'lastname', NULL),
-(76, 'user5@gmail.com', '[]', '$2y$13$7VUknMIatQ3/AeK4CP8OAOdtQ5n71nbNrDvgOre7okEe4D9w0eesG', 'firstname5', 'lastname', NULL),
+(75, 'user4@gmail.com', '[]', '$2y$13$nk7w.cYPi4f1VU2XncxyseqyJSZWmWRvTDiwPMv6prjyed8/jJhDO', 'firstname4', 'lastname', 10),
+(76, 'user5@gmail.com', '[]', '$2y$13$7VUknMIatQ3/AeK4CP8OAOdtQ5n71nbNrDvgOre7okEe4D9w0eesG', 'firstname5', 'lastname', 9),
 (77, 'user6@gmail.com', '[]', '$2y$13$eghvy8zOBE9uvXy0mNCTjeEk7G7TdDLrBhYIrvFlQ5Ft7yosYmYEG', 'firstname6', 'lastname', 10),
 (78, 'user7@gmail.com', '[]', '$2y$13$MTS6aqFvib9CRm8HMMAGIe4JWt/16s2quiuCsh1OmxDPXghEmzsjO', 'firstname7', 'lastname', 10),
-(79, 'user8@gmail.com', '[]', '$2y$13$9QSzVif7.m/zPHl9sKCdueHRBgqp6b3pNO6hABJ2AXh13NzcbnVEW', 'firstname8', 'lastname', NULL),
-(80, 'user9@gmail.com', '[]', '$2y$13$COmMnjS/IMrJ01nOBX2vM.RC8FYNv3jFWyC3Sez1uOwG9BAGp5D6u', 'firstname9', 'lastname', NULL);
+(79, 'user8@gmail.com', '[]', '$2y$13$9QSzVif7.m/zPHl9sKCdueHRBgqp6b3pNO6hABJ2AXh13NzcbnVEW', 'firstname8', 'lastname', 9),
+(80, 'user9@gmail.com', '[]', '$2y$13$COmMnjS/IMrJ01nOBX2vM.RC8FYNv3jFWyC3Sez1uOwG9BAGp5D6u', 'firstname9', 'lastname', 10);
 
 -- --------------------------------------------------------
 
@@ -349,8 +350,8 @@ CREATE TABLE `wallet` (
 --
 
 INSERT INTO `wallet` (`id`, `name`, `manager_id`) VALUES
-(3, 'Premier projet', 72),
-(4, 'Deuxième projet', 77);
+(3, 'Portefeuille 1', 72),
+(4, 'Portefeuille 2', 77);
 
 --
 -- Index pour les tables exportées
@@ -465,7 +466,7 @@ ALTER TABLE `milestone`
 -- AUTO_INCREMENT pour la table `probability`
 --
 ALTER TABLE `probability`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT pour la table `project`
 --
@@ -495,7 +496,7 @@ ALTER TABLE `team`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 --
 -- AUTO_INCREMENT pour la table `wallet`
 --
