@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mer 06 Avril 2022 à 13:05
+-- Généré le :  Ven 08 Avril 2022 à 13:19
 -- Version du serveur :  5.7.11
 -- Version de PHP :  7.0.3
 
@@ -201,16 +201,16 @@ CREATE TABLE `project` (
 --
 
 INSERT INTO `project` (`id`, `name`, `description`, `started_at`, `ended_at`, `created_at`, `status_id`, `wallet_id`, `production_team_id`, `client_team_id`, `budget_id`, `code`, `archive`) VALUES
-(31, 'test0', 'Premier test0', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 22, 4, 9, 10, 23, '1', 1),
+(31, 'test0', 'Premier test0', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 22, 4, 9, 10, 23, '845fsr4', 1),
 (32, 'test1', 'Premier test1', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 24, 4, 10, 9, 23, '1', 0),
-(33, 'test2', 'Premier test2', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 3, 9, 9, 22, '1fffff', 0),
+(33, 'test2', 'Premier test2', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 3, 9, 9, 22, '1a', 0),
 (34, 'test3', 'Premier test3', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 4, 10, 10, 22, '1', 0),
 (35, 'test4', 'Premier test4', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 3, 10, 10, 23, '1', 0),
 (36, 'test5', 'Premier test5', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 3, 10, 10, 24, '1', 0),
 (37, 'test6', 'Premier test6', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 3, 10, 10, 23, '1', 0),
 (38, 'test7', 'Premier test7', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 4, 9, 10, 23, '1', 0),
 (39, 'test8', 'Premier test8', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 22, 4, 10, 9, 23, '1', 0),
-(40, 'test9', 'Premier test9', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 4, 9, 9, 24, '1', 0);
+(40, 'test9', 'Premier test9', '2022-04-04', '2022-04-04', '2022-04-04 13:47:15', 23, 4, 9, 9, 24, '1', 1);
 
 -- --------------------------------------------------------
 
@@ -496,7 +496,7 @@ ALTER TABLE `team`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 --
 -- AUTO_INCREMENT pour la table `wallet`
 --

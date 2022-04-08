@@ -56,6 +56,24 @@ class ProjectRepository extends ServiceEntityRepository
         return $qb->getQuery()->getResult();
     }
 
+    public function findArchivedProject(): array
+    {
+        return $this->createQueryBuilder('a')
+        ->andWhere('a.archive = :archive')
+        ->setParameter('archive',1)
+        ->getQuery()
+        ->getResult();
+    }
+
+    public function findProjectNotArchived(): array
+    {
+        return $this->createQueryBuilder('a')
+        ->andWhere('a.archive = :archive')
+        ->setParameter('archive',0)
+        ->getQuery()
+        ->getResult();
+    }
+
 
     
 
